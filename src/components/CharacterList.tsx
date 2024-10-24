@@ -1,12 +1,10 @@
 import queryFn, { GET_DEFAULT_CHARACTERS_KEY } from '../api/getDefaultCharacters';
 import { useQuery } from '@tanstack/react-query';
-import Loading from './util-components/Loading';
+import Loading from './util-components/Loading'
 import ErrorMessage from './util-components/ErrorMessage';
-import { Link } from 'react-router-dom';
-import { mediaNamesFormatter } from '../utils';
 import BasicCharacterCard from './BasicCharacterCard';
 
-const queryOpts = { queryKey: [GET_DEFAULT_CHARACTERS_KEY], queryFn }
+const queryOpts = { queryKey: [GET_DEFAULT_CHARACTERS_KEY], queryFn };
 
 export default function CharacterList() {
   const { data, isLoading, isError } = useQuery(queryOpts);

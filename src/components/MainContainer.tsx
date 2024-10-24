@@ -1,8 +1,10 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 export default function MainContainer() {
   return <>
-    <header>DISNEY</header>
+    <header>
+      <Link to="/">DISNEY</Link>
+    </header>
     <main>
       <Outlet />
     </main>

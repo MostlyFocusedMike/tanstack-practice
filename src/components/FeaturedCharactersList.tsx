@@ -2,8 +2,6 @@ import queryFn, { GET_FEATURED_CHARACTERS_KEY } from '../api/getFeaturedCharacte
 import { useQuery } from '@tanstack/react-query';
 import Loading from './util-components/Loading';
 import ErrorMessage from './util-components/ErrorMessage';
-import { Link } from 'react-router-dom';
-import { mediaNamesFormatter } from '../utils';
 import BasicCharacterCard from './BasicCharacterCard';
 
 const queryOpts = { queryKey: [GET_FEATURED_CHARACTERS_KEY], queryFn }
