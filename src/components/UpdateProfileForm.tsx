@@ -1,6 +1,8 @@
 import { FormEvent } from "react";
 import { UserDataType } from "../pages/UserProfilePage"
 import Cookies from 'js-cookie';
+import StateSelector from "./util-components/StateSelector";
+import ParkSelector from "./util-components/ParkSelector";
 
 type Props = {
   userData: UserDataType;
@@ -12,14 +14,11 @@ export default function UpdateProfileForm(props: Props) {
     userData: {
       firstName,
       lastName,
-      updatedAt,
       birthday,
       city,
-      state,
       faveCharacter,
       faveRide,
       faveMovie,
-      favePark,
     },
     handleShowForm
   } = props;
@@ -27,16 +26,18 @@ export default function UpdateProfileForm(props: Props) {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement
+    const formVals: UserDataType = Object.fromEntries(new FormData(form));
 
-    Cookies.set('firstName', form.firstName.value);
-    Cookies.set('lastName', form.lastName.value);
-    Cookies.set('birthday', form.birthday.value);
-    Cookies.set('city', form.city.value);
-    Cookies.set('state', form.state.value);
-    Cookies.set('faveCharacter', form.faveCharacter.value);
-    Cookies.set('faveRide', form.faveRide.value);
-    Cookies.set('faveMovie', form.faveMovie.value);
-    Cookies.set('favePark', form.favePark.value);
+    Cookies.set('updatedAt', (new Date()).toString());
+    Cookies.set('firstName', formVals.firstName || '');
+    Cookies.set('lastName', formVals.lastName || '');
+    Cookies.set('birthday', formVals.birthday || '');
+    Cookies.set('city', formVals.city || '');
+    Cookies.set('state', formVals.state || '');
+    Cookies.set('faveCharacter', formVals.faveCharacter || '');
+    Cookies.set('faveRide', formVals.faveRide || '');
+    Cookies.set('faveMovie', formVals.faveMovie || '');
+    Cookies.set('favePark', formVals.favePark || '');
 
     handleShowForm();
   }
@@ -74,7 +75,7 @@ export default function UpdateProfileForm(props: Props) {
         </div>
         <div>
           <label htmlFor="state">State:</label>
-          <input type="text" id="state" name="state" defaultValue={state} />
+          <StateSelector id="state" name='state' />
         </div>
       </div>
 
@@ -98,7 +99,7 @@ export default function UpdateProfileForm(props: Props) {
 
       <div>
         <label htmlFor="fave-park">Favorite Disneyland</label>
-        <input type="text" id="fave-park" name="favePark" defaultValue={favePark} />
+        <ParkSelector id="fave-park" />
       </div>
 
       <button>UpdateForm</button>

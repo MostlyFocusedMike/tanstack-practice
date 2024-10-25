@@ -4,8 +4,8 @@ import useSearchQueryDebounce from "../hooks/useSearchQueryDebounce";
 
 export default function SearchForm() {
   const [searchParams] = useSearchParams();
-  const nameQueryParam = searchParams.get('name') || ''
-  const [inputVal, setInputVal] = useState(nameQueryParam)
+  const nameQueryParam = searchParams.get('name') || '';
+  const [inputVal, setInputVal] = useState(nameQueryParam);
   const navigate = useNavigate();
 
   const handleSearch = () => navigate(`/search?name=${encodeURIComponent(inputVal)}`);
