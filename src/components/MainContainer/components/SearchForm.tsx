@@ -1,6 +1,6 @@
 import { useState, FormEvent, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom"
-import useSearchQueryDebounce from "../hooks/useSearchQueryDebounce";
+import useSearchQueryDebounce from "../../../hooks/useSearchQueryDebounce";
 
 export default function SearchForm() {
   const [searchParams] = useSearchParams();

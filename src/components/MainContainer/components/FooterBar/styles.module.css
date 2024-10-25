@@ -1,0 +1,12 @@
+.footerBar {
+  padding: 1rem;
+  & svg {
+    display: block;
+    margin: 2rem auto 0;
+  }
+
+  & p {
+    font-size: 0.675rem;
+    text-align: center;
+  }
+}

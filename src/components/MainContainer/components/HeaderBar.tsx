@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
+import DisneyLogo from "./logos/DisneyLogo";
+import UserLogo from "./logos/UserLogo";
 import SearchForm from "./SearchForm";
-import DisneyLogo from "./util-components/DisneyLogo";
-import UserLogo from "./util-components/UserLogo";
 
 export default function NavBar() {
   return (
