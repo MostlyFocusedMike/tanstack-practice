@@ -7,7 +7,7 @@ export type UserDataType = {
   firstName?: string;
   lastName?: string;
   updatedAt?: string;
-  age?: string;
+  birthday?: string;
   city?: string;
   state?: string;
   faveCharacter?: string;
@@ -25,7 +25,7 @@ export default function UserProfilePage() {
       firstName: Cookies.get('firstName'),
       lastName: Cookies.get('lastName'),
       updatedAt: Cookies.get('updatedAt'),
-      age: Cookies.get('age'),
+      birthday: Cookies.get('birthday'),
       city: Cookies.get('city'),
       state: Cookies.get('state'),
       faveCharacter: Cookies.get('faveCharacter'),

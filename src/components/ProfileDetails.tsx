@@ -1,4 +1,5 @@
 import { UserDataType } from "../pages/UserProfilePage";
+import { getAge } from "../utils";
 
 type ProfileDetailsProps = {
   userData: UserDataType;
@@ -11,7 +12,7 @@ export default function ProfileDetails(props: ProfileDetailsProps) {
       firstName,
       lastName,
       updatedAt,
-      age,
+      birthday,
       city,
       state,
       faveCharacter,
@@ -21,10 +22,11 @@ export default function ProfileDetails(props: ProfileDetailsProps) {
     },
     handleShowForm,
   } = props;
+
   return <div>
     <h1>{firstName} {lastName}</h1>
     <p>Last updated at {updatedAt}</p>
-    <p>Age: {age} </p>
+    <p>Age: {birthday && getAge(birthday)} </p>
     <p>Location: {city} {state}</p>
     <p>Favorite Disney Character: {faveCharacter}</p>
     <p>Favorite Disney Ride: {faveRide}</p>
