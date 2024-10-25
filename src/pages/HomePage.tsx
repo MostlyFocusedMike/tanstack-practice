@@ -1,5 +1,5 @@
-import CharacterList from '../components/CharacterList';
-import FeaturedCharactersList from '../components/FeaturedCharactersList';
+import CharacterList from '../components/DefaultCharacterList';
+import FeaturedCharactersList from '../components/FeaturedCharacterList';
 
 export default function HomePage() {
   return <>

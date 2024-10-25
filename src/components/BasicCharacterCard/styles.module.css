@@ -1,9 +1,9 @@
 
 
 .basicCharacterCard {
-
   width: 15.5rem;
   height: 26rem;
+  background-color: #FFF;
 
   & img {
     width: 100%;
@@ -25,7 +25,7 @@
     text-align: center;
     margin: 0 auto;
     font-weight: 300;
-    font-size: .93rem;
+    font-size: .9rem;
   }
 
   & a,
@@ -49,6 +49,13 @@
   & a:active {
     color: var(--disney-blue-accent);
   }
+}
+
+p.characterName {
+  margin: 1rem auto;
+  text-align: center;
+  font-weight: 900;
+  font-size: 1.125rem;
 }
 
 .ellipsisBox {

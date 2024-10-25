@@ -1,4 +1,4 @@
-import FeaturedCharactersList from "../components/FeaturedCharactersList"
+import FeaturedCharactersList from "../components/FeaturedCharacterList"
 import SearchResults from "../components/SearchResults"
 
 export default function SearchPage() {
