@@ -14,7 +14,7 @@ export default function SearchCharacterList({ queryKey }: { queryKey: string}) {
 
   const { characters } = data;
 
-  return <ul className={styleUtils.characterCardFlexList}>
+  return <ul className={`${styleUtils.characterCardFlexList} ${styleUtils.flexStart}`}>
     {
       characters.map((character) => (<li key={character._id}>
         <BasicCharacterCard { ...character} />
