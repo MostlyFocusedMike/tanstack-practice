@@ -1,6 +1,7 @@
 import { useState, FormEvent, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom"
-import useSearchQueryDebounce from "../../../hooks/useSearchQueryDebounce";
+import useSearchQueryDebounce from "../../../../hooks/useSearchQueryDebounce";
+import styles from './styles.module.css';
 
 export default function SearchForm() {
   const [searchParams] = useSearchParams();
@@ -22,7 +23,7 @@ export default function SearchForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.searchForm}>
       <input
         type="search"
         value={inputVal}

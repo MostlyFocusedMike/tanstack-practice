@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: "Lato", "sans-serif";
+  --light-blue: #F1F2F3;
   --disney-blue: #054553;
   --disney-blue-accent: #1f879e;
 }
@@ -10,10 +11,13 @@ html, body {
   padding: 0;
 }
 
-main {
-  background-color: #F1F2F3;
-  max-width: 75rem;
+body {
   margin: 0 auto;
+  max-width: 75rem;
+}
+
+main {
+  background-color: var(--light-blue);
   padding-top: 5rem;
 }
 
