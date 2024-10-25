@@ -18,7 +18,7 @@ export default function DetailedCharacterCard(props: DetailCardPropsType) {
   if (isError) return <ErrorMessage />
 
   const { name, imageUrl, sourceUrl, films, tvShows, shortFilms, updatedAt } = data;
-  return <section aria-label={`${name}'s Character Details`} className={styles.searchResults}>
+  return <section aria-label={`${name}'s Character Details`} className={styles.details}>
     <img src={imageUrl} alt={name} className={styles.heroImg} />
     <div>
       <h1>{name}</h1>
