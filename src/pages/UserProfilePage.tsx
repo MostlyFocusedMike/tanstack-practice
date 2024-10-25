@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie'
 import ProfileDetails from '../components/ProfileDetails';
-import UpdateProfileForm from '../components/ProfileDetails/UpdateProfileForm';
+import UpdateProfileForm from '../components/UpdateProfileForm';
 
 export type UserDataType = {
   firstName?: string;

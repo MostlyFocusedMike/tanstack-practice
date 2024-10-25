@@ -1,0 +1,35 @@
+.formContainer {
+  padding: 4rem 5rem;
+}
+
+.sideBySide {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+}
+
+.field {
+  margin: 1rem 0 0;
+  width: 15rem;
+  & input {
+    display: block;
+    width: 100%;
+    padding: 0.1rem 0.3rem;
+  }
+
+  & select {
+    display: block;
+    padding: 0.1rem 0.3rem;
+  }
+
+  &:has([name]:required) > label::after {
+    content: "*";
+    color: red;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0 0rem;
+}
