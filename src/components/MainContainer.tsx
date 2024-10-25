@@ -1,10 +1,9 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import HeaderBar from "./HeaderBar";
 
 export default function MainContainer() {
   return <>
-    <header>
-      <Link to="/">DISNEY</Link>
-    </header>
+    <HeaderBar />
     <main>
       <Outlet />
     </main>

@@ -4,7 +4,7 @@ import Loading from './util-components/Loading';
 import ErrorMessage from './util-components/ErrorMessage';
 import BasicCharacterCard from './BasicCharacterCard';
 
-const queryOpts = { queryKey: [GET_FEATURED_CHARACTERS_KEY], queryFn }
+const queryOpts = { queryKey: [GET_FEATURED_CHARACTERS_KEY], queryFn };
 
 export default function FeaturedCharactersList() {
   const { data, isLoading, isError } = useQuery(queryOpts);

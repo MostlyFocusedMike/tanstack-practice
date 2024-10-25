@@ -11,6 +11,6 @@ export default function BasicCharacterCard(props: CharacterType) {
     <h2>{name}</h2>
     <p>Featured Films</p>
     <p>{ listOfFilms.length ? listOfFilms : 'None yet!' }</p>
-    <div><Link to={`characters/${_id}`}>View Profile</Link></div>
+    <div><Link to={`/characters/${_id}`}>View Profile</Link></div>
   </>
 }
