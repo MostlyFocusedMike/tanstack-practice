@@ -1,5 +1,5 @@
 import { useQueries } from '@tanstack/react-query';
-import queryFn from '../api/getCharacter';
+import queryFn, { GET_CHARACTER } from '../api/getCharacter';
 import { CharacterType } from '../types';
 const [belle, beast, mickey, donald] = [571, 544, 4703, 1947];
 const featuredIds = [belle, beast, mickey, donald];
@@ -8,7 +8,7 @@ const featuredIds = [belle, beast, mickey, donald];
 export function useFeaturedCharacters() {
   const queries = useQueries({
     queries: featuredIds.map(id => ({
-      queryKey: ['characters', id],
+      queryKey: [GET_CHARACTER, id],
       queryFn: () => queryFn(id)
     })),
   });

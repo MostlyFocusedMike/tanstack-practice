@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import ErrorMessage from "../util-components/ErrorMessage";
 import Loading from "../util-components/Loading";
-import queryFn from '../../api/getCharacter';
+import queryFn, { GET_CHARACTER } from '../../api/getCharacter';
 import { formatDate } from "../../utils";
 import styles from './styles.module.css';
 import styleUtils from '../../utils.module.css';
@@ -11,7 +11,7 @@ type DetailCardPropsType = {
 }
 export default function DetailedCharacterCard(props: DetailCardPropsType) {
   const { characterId } = props;
-  const queryOpts = { queryKey: ['characters', characterId], queryFn: () => queryFn(characterId) };
+  const queryOpts = { queryKey: [GET_CHARACTER, characterId], queryFn: () => queryFn(characterId) };
 
   const { data, isLoading, isError } = useQuery(queryOpts);
   if (isLoading) return <Loading />
