@@ -1,3 +1,14 @@
+import { useParams } from "react-router-dom";
+import DetailedCharacterCard from "../components/DetailedCharacterCard";
+import FeaturedCharactersList from "../components/FeaturedCharactersList";
+
 export default function CharacterPage() {
-  return <h1>Character Page</h1>
+  const { characterId } = useParams();
+
+  if (!characterId) return null;
+
+  return <>
+    <DetailedCharacterCard characterId={Number(characterId)} />
+    <FeaturedCharactersList />
+  </>
 }

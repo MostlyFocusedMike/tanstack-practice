@@ -4,3 +4,12 @@ export const mediaNamesFormatter = (movieList: string[]) => {
 
   return formatter.format(quotedMovies);
 }
+
+export const formatDate = (timestamp: string) => {
+  const date = new Date(timestamp);
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }).format(date);
+};

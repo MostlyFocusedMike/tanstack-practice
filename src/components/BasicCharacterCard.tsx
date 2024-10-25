@@ -8,9 +8,9 @@ export default function BasicCharacterCard(props: CharacterType) {
 
   return <>
     <img src={imageUrl} alt={name} />
-    <h2>{name}</h2>
+    <h3>{name}</h3>
     <p>Featured Films</p>
     <p>{ listOfFilms.length ? listOfFilms : 'None yet!' }</p>
-    <div><Link to={`/characters/${_id}`}>View Profile</Link></div>
+    <div><Link to={`/characters/${_id}`} aria-label={`View ${name}'s profile`}>View Profile</Link></div>
   </>
 }
