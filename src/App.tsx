@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 import MainContainer from './components/MainContainer';
 import HomePage from './pages/HomePage';
 import CharacterPage from './pages/CharacterPage';
@@ -12,19 +12,21 @@ const queryClient = new QueryClient({
   }
 });
 
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<MainContainer />}>
+      <Route index element={<HomePage />} />
+      <Route path="characters/:characterId" element={<CharacterPage />} />
+      <Route path="search" element={<SearchPage />} />
+      <Route path="profile" element={<UserProfilePage />} />
+    </Route>
+  )
+);
+
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<MainContainer />}>
-            <Route index element={<HomePage />} />
-            <Route path="/characters/:characterId" element={<CharacterPage />} />
-            <Route path="/search" element={<SearchPage />} />
-            <Route path="/profile" element={<UserProfilePage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <RouterProvider router={router} />
     </QueryClientProvider>
   );
 }

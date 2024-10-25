@@ -11,7 +11,7 @@ type DetailCardPropsType = {
 }
 export default function DetailedCharacterCard(props: DetailCardPropsType) {
   const { characterId } = props;
-  const queryOpts = { queryKey: [characterId], queryFn: () => queryFn(characterId) };
+  const queryOpts = { queryKey: ['characters', characterId], queryFn: () => queryFn(characterId) };
 
   const { data, isLoading, isError } = useQuery(queryOpts);
   if (isLoading) return <Loading />
