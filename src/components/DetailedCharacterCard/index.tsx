@@ -1,8 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import ErrorMessage from "../components/util-components/ErrorMessage";
-import Loading from "../components/util-components/Loading";
-import queryFn from '../api/getCharacter';
-import { formatDate } from "../utils";
+import ErrorMessage from "../util-components/ErrorMessage";
+import Loading from "../util-components/Loading";
+import queryFn from '../../api/getCharacter';
+import { formatDate } from "../../utils";
+import styles from './styles.module.css';
+import styleUtils from '../../utils.module.css';
 
 type DetailCardPropsType = {
   characterId: number;
@@ -16,8 +18,8 @@ export default function DetailedCharacterCard(props: DetailCardPropsType) {
   if (isError) return <ErrorMessage />
 
   const { name, imageUrl, sourceUrl, films, tvShows, shortFilms, updatedAt } = data;
-  return <section aria-label={`${name}'s Character Details`}>
-    <img src={imageUrl} alt={name} />
+  return <section aria-label={`${name}'s Character Details`} className={styles.searchResults}>
+    <img src={imageUrl} alt={name} className={styles.heroImg} />
     <div>
       <h1>{name}</h1>
       <p>Last Updated {formatDate(updatedAt)}</p>
@@ -44,6 +46,7 @@ export default function DetailedCharacterCard(props: DetailCardPropsType) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Find more information about ${name}`}
+        className={styleUtils.linkButton}
       >
         Explore More Character Details
       </a>
