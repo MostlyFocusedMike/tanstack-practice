@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie'
 import ProfileDetails from '../components/ProfileDetails';
-import UpdateProfileForm from '../components/UpdateProfileForm';
+import UpdateProfileForm from '../components/ProfileDetails/UpdateProfileForm';
 
 export type UserDataType = {
   firstName?: string;
@@ -37,8 +37,7 @@ export default function UserProfilePage() {
 
   const handleShowForm = () => setIsFormVisible((prev) => !prev);
 
-  return <section aria-labelledby='profile-heading'>
-    <h1 id="profile-heading">User Profile page</h1>
+  return <section aria-label='User Profile'>
     {
       isFormVisible
         ? <UpdateProfileForm userData={userData} handleShowForm={handleShowForm} />

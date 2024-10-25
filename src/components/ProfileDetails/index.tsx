@@ -1,5 +1,7 @@
-import { UserDataType } from "../pages/UserProfilePage";
-import { formatDate, getAge } from "../utils";
+import { UserDataType } from "../../pages/UserProfilePage";
+import { formatDate, getAge } from "../../utils";
+import styles from './styles.module.css';
+import styleUtils from '../../utils.module.css';
 
 type ProfileDetailsProps = {
   userData: UserDataType;
@@ -27,7 +29,7 @@ export default function ProfileDetails(props: ProfileDetailsProps) {
     ? `${city}, ${state}`
     : `${city || ''} ${state || ''}`;
 
-  return <div>
+  return <div className={styles.profileDetails}>
     <h1>{firstName} {lastName}</h1>
     <p>Last updated at {updatedAt && formatDate(updatedAt)}</p>
     <p>Age: {birthday && getAge(birthday)} </p>
@@ -36,6 +38,6 @@ export default function ProfileDetails(props: ProfileDetailsProps) {
     <p>Favorite Disney Ride: {faveRide}</p>
     <p>Favorite Disney Movie: {faveMovie}</p>
     <p>Favorite Disneyland: {favePark}</p>
-    <button onClick={handleShowForm}>Edit Profile</button>
+    <button className={styleUtils.mainButton} onClick={handleShowForm}>Edit Profile</button>
   </div>
 }

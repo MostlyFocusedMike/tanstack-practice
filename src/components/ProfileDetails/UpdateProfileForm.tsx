@@ -1,9 +1,8 @@
 import { FormEvent } from "react";
-import { UserDataType } from "../pages/UserProfilePage"
+import { UserDataType } from "../../pages/UserProfilePage"
 import Cookies from 'js-cookie';
-import StateSelector from "./util-components/StateSelector";
-import ParkSelector from "./util-components/ParkSelector";
-
+import StateSelector from "../util-components/StateSelector";
+import ParkSelector from "../util-components/ParkSelector";
 type Props = {
   userData: UserDataType;
   handleShowForm: () => void;
