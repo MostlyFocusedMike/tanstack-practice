@@ -1,5 +1,5 @@
 import { useState, FormEvent } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 export default function SearchForm() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -16,7 +16,7 @@ export default function SearchForm() {
         type="search"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder="Search characters..."
+        placeholder="Find a character..."
       />
     </form>
   );
