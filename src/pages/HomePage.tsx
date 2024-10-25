@@ -1,9 +1,9 @@
-import CharacterList from '../components/DefaultCharacterList';
-import FeaturedCharactersList from '../components/FeaturedCharacterList';
+import DefaultCharacterSection from '../components/DefaultCharacterSection';
+import FeaturedCharacterSection from '../components/FeaturedCharacterSection';
 
 export default function HomePage() {
   return <>
-    <CharacterList />
-    <FeaturedCharactersList />
+    <DefaultCharacterSection />
+    <FeaturedCharacterSection />
   </>
 }

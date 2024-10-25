@@ -7,14 +7,14 @@ import styleUtils from '../../utils.module.css';
 
 const queryOpts = { queryKey: [GET_DEFAULT_CHARACTERS_KEY], queryFn };
 
-export default function CharacterList() {
+export default function DefaultCharacterSection() {
   const { data, isLoading, isError } = useQuery(queryOpts);
   if (isLoading) return <Loading />;
   if (isError) return <ErrorMessage />;
 
   const { characters } = data;
   return <section aria-label="Default Characters">
-    <ul className={styleUtils.characterCardFlexList}>
+    <ul className={`${styleUtils.characterCardFlexList} ${styleUtils.mt4}`}>
       {
         characters.map((character) => (<li key={character._id}>
           <BasicCharacterCard { ...character} />

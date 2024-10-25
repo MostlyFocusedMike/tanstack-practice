@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 
 const queryOpts = { queryKey: [GET_FEATURED_CHARACTERS_KEY], queryFn };
 
-export default function FeaturedCharactersList() {
+export default function FeaturedCharactersSection() {
   const { data, isLoading, isError } = useQuery(queryOpts);
   if (isLoading) return <Loading />
   if (isError) return <ErrorMessage />

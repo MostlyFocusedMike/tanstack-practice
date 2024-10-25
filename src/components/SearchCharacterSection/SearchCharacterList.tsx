@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import queryFn from '../api/getSearchedCharacters';
-import Loading from "./util-components/Loading";
-import ErrorMessage from "./util-components/ErrorMessage";
-import BasicCharacterCard from "./BasicCharacterCard";
+import queryFn from '../../api/getSearchedCharacters';
+import Loading from "../util-components/Loading";
+import ErrorMessage from "../util-components/ErrorMessage";
+import BasicCharacterCard from "../BasicCharacterCard";
+import styleUtils from '../../utils.module.css';
 
 export default function SearchCharacterList({ queryKey }: { queryKey: string}) {
   const queryOpts = { queryKey: [queryKey], queryFn: () => queryFn(queryKey) }
@@ -13,7 +14,7 @@ export default function SearchCharacterList({ queryKey }: { queryKey: string}) {
 
   const { characters } = data;
 
-  return <ul>
+  return <ul className={styleUtils.characterCardFlexList}>
     {
       characters.map((character) => (<li key={character._id}>
         <BasicCharacterCard { ...character} />

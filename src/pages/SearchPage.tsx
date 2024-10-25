@@ -1,9 +1,9 @@
-import FeaturedCharactersList from "../components/FeaturedCharacterList"
-import SearchResults from "../components/SearchResults"
+import FeaturedCharacterSection from "../components/FeaturedCharacterSection"
+import SearchCharacterSection from "../components/SearchCharacterSection"
 
 export default function SearchPage() {
   return <>
-    <SearchResults />
-    <FeaturedCharactersList />
+    <SearchCharacterSection />
+    <FeaturedCharacterSection />
   </>
 }
