@@ -8,8 +8,8 @@ import { useFeaturedCharacters } from '../../hooks/useFeaturedCharacters';
 export default function FeaturedCharactersSection() {
   const { characters, isLoading, isError } = useFeaturedCharacters();
 
-  if (isLoading) return <Loading />
-  if (isError) return <ErrorMessage />
+  if (isLoading) return <Loading />;
+  if (isError) return <ErrorMessage />;
 
   return <section aria-labelledby='featured-header' className={styles.featuredCharacters}>
     <h2 id='featured-header'>Featured Characters</h2>
